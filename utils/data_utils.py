@@ -38,12 +38,11 @@ class DataLoader():
     
     def load_timeseries(self, filename, series):
         #Load time series dataset
-        loaded_series = pd.read_csv(filename, sep=',', header=0, index_col=0, squeeze=True)
+        loaded_series = pd.read_pickle(filename)
     
-        #Applying filter on the selected series
-        selected_series = loaded_series.filter(items=series)
+        #Applying filter on the selected 
     
-        return selected_series
+        return loaded_series
     
     def min_max(self, data, min, max):
         """Normalize data"""
