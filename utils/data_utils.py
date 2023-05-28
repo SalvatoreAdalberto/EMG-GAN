@@ -44,26 +44,7 @@ class DataLoader():
     
         return loaded_series
     
-    def min_max(self, data, min, max):
-        """Normalize data"""
-        scaler = MinMaxScaler(feature_range=(min, max),copy=True)
-        scaler.fit(data)
-        norm_value = scaler.transform(data)
-        return [norm_value, scaler]
     
-    def get_windows(self, data, window_size):
-        # Split data into windows
-        raw = []
-        for index in range(len(data) - window_size):
-            raw.append(data[index: index + window_size])
-        return raw
-    
-    def normalize(self, data):
-        """Normalize data"""
-        scaler = MinMaxScaler(feature_range=(0, 1),copy=True)
-        scaler.fit(data)
-        norm_value = scaler.transform(data)
-        return [norm_value, scaler]
     
     def get_training_batch(self):
         x_train = self.load_training_data()
