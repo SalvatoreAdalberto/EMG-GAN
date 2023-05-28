@@ -1,5 +1,6 @@
 import argparse
 import json
+import keras
 from models.dcgan import DCGAN
 from utils.metrics import *
 from utils.plot_utils import plot_losses
